@@ -1,0 +1,76 @@
+﻿@charset "utf-8";
+
+/* =======================================
+
+	CommonElements
+
+======================================= */
+body {
+	font-size: 100%;
+	line-height: 160%;
+	font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+	text-align: center;
+	background: #fff;
+}
+
+a:link { text-decoration:none; color: #000;}
+a:visited { text-decoration:none; color: #000;}
+a:active { text-decoration:none; color: #000;}
+a:hover { text-decoration:none; color: #000;}
+
+h1 {
+	padding: 10px 0;
+	background: #000;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+h2 {
+	padding: 30px 0;
+	width: 100%;
+	font-size: 12px;
+}
+
+#container {
+	padding: 100px 0 70px 0;
+	width: 100%;
+	font-size: 120%;
+	text-align: center;
+}
+
+.textSplitLoad {
+	display: none;
+}
+.split {
+	visibility: hidden;
+	margin-bottom: 90px;
+}
+.split strong {
+	font-size: 200%;
+	font-weight: bold;
+}
+.split .color1 {
+	color: #ff0088;
+	font-size: 190%;
+	font-weight: bold;
+}
+.split .color2 {
+	color: #ff0088;
+	font-size: 130%;
+	font-weight: bold;
+}
+@font-face{
+	font-family: 'MyWebFont';
+	src:url('./font_1_kokumr_1.00_rls.ttf') format("OpenType");
+}
+.split .color3 {
+	color: #ff0088;
+	font-size: 110%;
+	font-family: 'MyWebFont';
+}
+.split .b{
+	font-size: 140%;
+	font-weight: bold;
+}

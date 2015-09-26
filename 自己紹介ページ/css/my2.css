@@ -1,0 +1,24 @@
+@charset "utf-8";
+*{
+	margin:0;
+	padding:0;
+}
+
+.contents{
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.textSplitLoad{
+	display: none;
+}
+
+.split{
+	visibility: hidden;
+}
+
+.color1{
+	color: #
+}

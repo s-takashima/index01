@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="viewport" content="width=device-width">
+	<title>高嶋 栞</title>
+	<link rel="stylesheet" type="text/css" href="./css/my2.css" media="screen,tv">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+	$(function(){
+		var setElm = $('.split'),
+		delaySpeed = 200,
+		fadeSpeed = 0;
+	
+		setText = setElm.html();
+	
+		setElm.css({visibility:'visible'}).children().addBack().contents().each(function(){
+			var elmThis = $(this);
+			if (this.nodeType == 3) {
+				var $this = $(this);
+				$this.replaceWith($this.text().replace(/(\S)/g,'<span class="textSplitLoad">$&</span>'));
+			}
+		});
+		$(window).load(function(){
+			splitLength = $('.textSplitLoad').length;
+			setElm.find('textSplitLoad').each(function(i){
+				splitThis = $(this);
+				splitTxt = splitThis.text();
+				splitThis.delay(i*(delaySpeed)).css({display:'inline-block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+			});
+			setTimeout(function(){
+				setElm.html(setText);
+			},splitLength*delaySpeed+fadeSpeed);
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="contents">
+		<p class="split"><strong>高嶋栞。</strong>ニックネームは<span class="color1">しおりん</span>1994年7月23日生まれの福井人<br>
+			趣味はショッピング、古着屋さん巡り、パン屋さん探し、綺麗なお家探し…<strong class="color2">散歩</strong>が好きです。<br>
+			<span class="color1">新</span>たな道の開拓は面白いです。<br>
+			ディズニーとジブリと細田守監督作品のアニメ映画が好きでよく観ます。<br>
+			ディズニー、プーさんの登場人物のクリストファーロビン(6歳)の<br>
+			<span class="color3">『なにもしないことをする』</span>という言葉に惹かれ考え続けて<strong>21年</strong>
+		</p>
+	</div>
+</body>
+</html>

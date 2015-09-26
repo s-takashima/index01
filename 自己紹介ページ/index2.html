@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xml:lang="ja" lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<title>高嶋自己紹介</title>
+<link rel="stylesheet" href="http://black-flag.net/data/css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+$(function(){
+	var setElm = $('.split'),
+	delaySpeed = 150,
+	fadeSpeed = 0;
+
+	setText = setElm.html();
+
+	setElm.css({visibility:'visible'}).children().addBack().contents().each(function(){
+		var elmThis = $(this);
+		if (this.nodeType == 3) {
+			var $this = $(this);
+			$this.replaceWith($this.text().replace(/(\S)/g, '<span class="textSplitLoad">$&</span>'));
+		}
+	});
+	$(window).load(function(){
+		splitLength = $('.textSplitLoad').length;
+		setElm.find('.textSplitLoad').each(function(i){
+			splitThis = $(this);
+			splitTxt = splitThis.text();
+			splitThis.delay(i*(delaySpeed)).css({display:'inline-block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+		});
+		setTimeout(function(){
+				setElm.html(setText);
+		},splitLength*delaySpeed+fadeSpeed);
+	});
+});
+</script>
+</head>
+
+<body>
+<h1>自己紹介ページ</h1>
+
+<div id="container">
+
+		<p class="split"><strong>高嶋栞。</strong>ニックネームは<span class="color2">しおりん</span>　1994年7月23日生まれの福井人<br>
+			趣味はショッピング、古着屋さん巡り、パン屋さん探し、綺麗なお家探し…<strong class="color2">散歩</strong>が好きです。<br>
+			<span class="color1">新</span>たな道の開拓は面白いです。<br>
+			そしてディズニーとジブリと細田守監督作品の<span class="color1">ア</span>ニメ映画が好きでよく観ます。<br>
+			ディズニー、プーさんの登場<span class="color2">人物</span>のクリストファーロビン(6歳)の<br>
+			<span class="color3">『なにもしないことをする』</span>という言葉に惹かれ考え続けて<strong class="b">21年</strong></p>
+
+</div>
+
+<h2>&copy;2015 Y's inc. All Rights Reserved.</h2>
+</body>
+</html>
